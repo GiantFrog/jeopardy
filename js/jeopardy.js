@@ -466,7 +466,7 @@ function handleFinalAnswer(){
         var buttonAction = buttonID.substr(9,5);
         var playerNumber = buttonID.charAt(7);
         var wagerID = '#wager-player-' + playerNumber + '-input';
-        var wager = $(wagerID).val() == '' ? 0 : parseInt($(wagerID).val());
+        var wager = $(wagerID).val() == '' ? 0 :  parseInt($(wagerID).val().replace(/[^0-9\.]/, ''));
         var scoreVariable = 'score_player_' + playerNumber;
         var otherButtonID = '#final-p' + playerNumber + '-' +
             (buttonAction === 'right' ? 'wrong' : 'right') + '-button';
